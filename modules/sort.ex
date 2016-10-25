@@ -1,10 +1,10 @@
-defmodule InsertionSort do
+defmodule InsertionSort do 
   def sort(list) when is_list(list), do: sort(list,[])
   def sort([],sorted), do: sorted
   def sort([h|t],sorted), do: sort(t, insert(h,sorted))
   defp insert(x,[]), do: [x] 
   defp insert(x,[h|t]) when x < h , do: [x] ++ [h|t]
-  defp insert(x,[h|t]), do: h ++ insert(x,t)
+  defp insert(x,[h|t]), do: [h] ++ insert(x,t)
 end
 
 defmodule BubbleSort do
